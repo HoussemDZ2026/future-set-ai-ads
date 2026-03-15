@@ -85,3 +85,13 @@ if prompt := st.chat_input("مثلاً: دروس دعم في الرياضيات 
                 })
             except Exception as e:
                 st.error(f"حدث خطأ: {e}")
+                import admin_panel
+
+# إضافة قائمة جانبية (Sidebar) للتبديل بين البوت ولوحة التحكم
+page = st.sidebar.selectbox("اختر الصفحة", ["بوت الإعلانات", "لوحة التحكم السرية"])
+
+if page == "لوحة التحكم السرية":
+    admin_panel.show_admin_panel()
+else:
+    # هنا تضع كود البوت الذي كتبناه سابقاً
+    pass 
